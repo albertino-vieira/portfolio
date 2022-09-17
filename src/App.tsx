@@ -1,5 +1,4 @@
 import './App.css';
-require('dotenv').config()
 import Router from './Router/Router';
 
 function App() {
