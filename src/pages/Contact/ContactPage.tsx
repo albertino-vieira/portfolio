@@ -18,11 +18,11 @@ function ContactPage() {
         const { name, value } = e.target;
         setContactState({ ...contactState, [name]: value });
     }
+    console.log(process.env.REACT_APP_PUBLIC_KEY, process.env)
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const { name, email, message } = contactState;
-        console.log(name !== '' && email !== '' && message !== '', contactState)
         if (name !== '' && email !== '' && message !== '') {
             emailjs.send(process.env.REACT_APP_SERVICE_ID!, process.env.REACT_APP_TEMPLATE_ID!, { ...contactState }, process.env.REACT_APP_PUBLIC_KEY!)
                 .then((response) => {
