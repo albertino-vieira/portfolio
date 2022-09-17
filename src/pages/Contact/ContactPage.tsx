@@ -18,7 +18,6 @@ function ContactPage() {
         const { name, value } = e.target;
         setContactState({ ...contactState, [name]: value });
     }
-    console.log(process.env.REACT_APP_PUBLIC_KEY, process.env)
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
